@@ -33,7 +33,7 @@ def main(
 @app.command()
 def serve(
     host: str = "0.0.0.0",
-    port: int = 8080,
+    port: int = int(os.getenv("PORT", 8080)),
 ):
     os.environ["FROM_INIT_PY"] = "true"
     if os.getenv("WEBUI_SECRET_KEY") is None:
