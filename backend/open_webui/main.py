@@ -381,6 +381,7 @@ from open_webui.tasks import (
 
 from open_webui.utils.redis import get_sentinels_from_env
 
+from open_webui.health import router as health_router
 
 if SAFE_MODE:
     print("SAFE MODE ENABLED")
@@ -1510,3 +1511,5 @@ else:
     log.warning(
         f"Frontend build directory not found at '{FRONTEND_BUILD_DIR}'. Serving API only."
     )
+
+app.include_router(health_router)
