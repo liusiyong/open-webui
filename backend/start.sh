@@ -18,6 +18,7 @@ KEY_FILE=.webui_secret_key
 
 PORT="${PORT:-8080}"
 HOST="${HOST:-0.0.0.0}"
+echo "Starting with HOST=$HOST and PORT=$PORT"
 
 if [[ -z "$WEBUI_SECRET_KEY" && -z "$WEBUI_JWT_SECRET_KEY" ]]; then
     echo "Loading WEBUI_SECRET_KEY from file, not provided as an environment variable."
