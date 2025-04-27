@@ -163,6 +163,8 @@ COPY --chown=$UID:$GID --from=build /app/package.json /app/package.json
 # copy backend files
 COPY --chown=$UID:$GID ./backend .
 
+RUN chmod +x /app/backend/start.sh
+
 EXPOSE 10000
 
 HEALTHCHECK --interval=10s --timeout=5s --retries=10 CMD curl --silent --fail http://localhost:${PORT:-10000}/health || exit 1
