@@ -16,7 +16,7 @@ fi
 
 KEY_FILE=.webui_secret_key
 
-PORT=${PORT}
+PORT="${PORT:-10000}"
 HOST="${HOST:-0.0.0.0}"
 echo "Starting with HOST=$HOST and PORT=$PORT"
 
