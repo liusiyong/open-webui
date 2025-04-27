@@ -1474,8 +1474,9 @@ async def get_opensearch_xml():
 
 
 @app.get("/health")
-async def healthcheck():
-    return {"status": True}
+async def health_check():
+    logging.info("Health check called")
+    return {"status": "ok"}
 
 
 @app.get("/health/db")
