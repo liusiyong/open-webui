@@ -167,7 +167,7 @@ RUN chmod +x /app/backend/start.sh
 
 EXPOSE 10000
 
-HEALTHCHECK --interval=10s --timeout=5s --retries=10 CMD curl --silent --fail http://localhost:${PORT:-10000}/health || exit 1
+HEALTHCHECK --interval=10s --timeout=5s --retries=10 CMD curl --silent --fail http://localhost:10000/health || exit 1
 
 USER $UID:$GID
 
